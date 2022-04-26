@@ -75,3 +75,14 @@ gradle clean assemble publishToMavenLocal
   which I'm modifying to require [Tainting](https://github.com/GlenKPeterson/Tainting) which requires
   TestUtilsBasic.
 - See also [TestUtilsHttp](https://github.com/GlenKPeterson/TestUtilsHttp)
+
+## License
+Copyright 2015 Glen Peterson and PlanBase Inc.
+
+This program and the accompanying materials are made available under the
+terms of the Apache License, Version 2.0:
+https://www.apache.org/licenses/LICENSE-2.0
+OR the Eclipse Public License v. 2.0:
+https://www.eclipse.org/legal/epl-2.0
+
+SPDX-License-Identifier: Apache-2.0 OR EPL-2.0
