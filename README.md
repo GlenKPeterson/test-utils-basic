@@ -6,7 +6,7 @@ The idea of contract-based testing was from watching Bill Venners:
 https://www.youtube.com/watch?v=bCTZQi2dpl8
 Any bugs are my own.
 
-This project also includes fake Http servlet requests/responses useful for end-to-end testing java servlets. 
+If you want fake Http servlet requests/responses useful for end-to-end testing java servlets, try TestUtilsHttp.
 
 ## Maven Dependency
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.organicdesign/TestUtils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.organicdesign/TestUtils)
