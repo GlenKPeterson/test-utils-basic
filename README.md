@@ -19,12 +19,12 @@ Maven:
 <dependency>
 	<groupId>org.organicdesign</groupId>
 	<artifactId>TestUtilsBasic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<scope>test</scope>
 </dependency>
 ```
 
-Gradle .kts: `testImplementation("org.organicdesign:TestUtilsBasic:0.0.1")`
+Gradle .kts: `testImplementation("org.organicdesign:TestUtilsBasic:0.0.2")`
 
 ## Usage: Equality
 ```java
@@ -73,7 +73,7 @@ gradle clean assemble publishToMavenLocal
 
 ## Change Log
 
-### 0.0.1 2022-04-26 "Basic"
+### 0.0.2 2022-04-26 "Basic"
 - Forked from [TestUtils](https://github.com/GlenKPeterson/TestUtils)
 - Removed all Http stuff because it relied on [Indented](https://github.com/GlenKPeterson/Indented)
   which I'm modifying to require [Tainted](https://github.com/GlenKPeterson/Tainted) which requires

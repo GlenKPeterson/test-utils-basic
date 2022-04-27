@@ -14,7 +14,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 // gradle --warning-mode all clean assemble dokkaJar publish publishToMavenLocal
 
 // To publish to Sonatype (do the maven local above first):
-// gradle --warning-mode all clean assemble dokkaJar publish publishToSonatype closeAndReleaseSonatypeStagingRepository
+// gradle --warning-mode all clean test assemble dokkaJar publish publishToSonatype closeAndReleaseSonatypeStagingRepository
 
 // If half-deployed, sign in here:
 // https://oss.sonatype.org
@@ -52,7 +52,7 @@ dependencies {
 
 group = "org.organicdesign"
 // Remember to update the version number in both the Maven and Gradle imports in README.md
-version = "0.0.1"
+version = "0.0.2"
 description = "Utilities for testing common Java contracts: equals(), hashCode(), compare(), compareTo(), and serialization"
 
 java {
