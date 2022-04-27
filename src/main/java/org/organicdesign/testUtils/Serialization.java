@@ -1,22 +1,20 @@
+// Copyright 2015 PlanBase Inc. & Glen Peterson
+// SPDX-License-Identifier: Apache-2.0 OR EPL-2.0
 package org.organicdesign.testUtils;
 
 import org.jetbrains.annotations.NotNull;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
+import java.io.*;
 
 public class Serialization {
     /**
-     Serializes and deserializes the passed object.  Note: Lambdas and anonymous classes are NOT
-     serializable in Java 8.  Only enums and classes that implement Serializable are.  This might
-     be the best reason to use enums for singletons.
-     @param obj the item to serialize and deserialize
-     @return whatever's left after serializing and deserializing the original item.  Sometimes
-     things throw (unchecked) exceptions.
+     * Serializes and deserializes the passed object.  Note: Lambdas and anonymous classes are NOT
+     * serializable in Java 8.  Only enums and classes that implement Serializable are.  This might
+     * be the best reason to use enums for singletons.
+     * @param obj the item to serialize and deserialize
+     * @return whatever's left after serializing and deserializing the original item.  Sometimes
+     * things throw (unchecked) exceptions.
      */
-
     @SuppressWarnings("unchecked")
     public static <T> T serializeDeserialize(
             @NotNull T obj

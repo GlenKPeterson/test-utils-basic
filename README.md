@@ -1,8 +1,8 @@
 # TestUtilsBasic
-Utilities for testing common Java/Kotlin contracts.  Currently: equals(), hashCode(), and compareTo().
+Utilities for testing Utilities for testing common Java contracts: equals(), hashCode(), compare(), compareTo(), and serialization.
 I find a bug almost every time I apply these tests to old code.  Usage is defined in the Javadocs.
 
-The idea of contract-based testing was from watching Bill Venners:
+Bill Venners gave me the idea of contract-based testing:
 https://www.youtube.com/watch?v=bCTZQi2dpl8
 Any bugs are my own.
 
@@ -13,6 +13,8 @@ If you want fake Http servlet requests/responses useful for end-to-end testing j
 [![javadoc](https://javadoc.io/badge2/org.organicdesign/TestUtilsBasic/javadoc.svg)](https://javadoc.io/doc/org.organicdesign/TestUtilsBasic)
 
 Note that this project is just for testing, so add it only to the `test` scope of your project:
+
+Maven:
 ```xml
 <dependency>
 	<groupId>org.organicdesign</groupId>
@@ -22,10 +24,12 @@ Note that this project is just for testing, so add it only to the `test` scope o
 </dependency>
 ```
 
+Gradle .kts: `testImplementation("org.organicdesign:TestUtilsBasic:0.0.1")`
+
 ## Usage: Equality
 ```java
-import static org.organicdesign.testUtilsBasic.EqualsContract.equalsDistinctHashCode;
-import static org.organicdesign.testUtilsBasic.EqualsContract.equalsSameHashCode;
+import static org.organicdesign.testUtils.EqualsContract.equalsDistinctHashCode;
+import static org.organicdesign.testUtils.EqualsContract.equalsSameHashCode;
 
 public class PaddingTest {
     @Test public void equalHashTest() {
@@ -72,7 +76,7 @@ gradle clean assemble publishToMavenLocal
 ### 0.0.1 2022-04-26 "Basic"
 - Forked from [TestUtils](https://github.com/GlenKPeterson/TestUtils)
 - Removed all Http stuff because it relied on [Indented](https://github.com/GlenKPeterson/Indented)
-  which I'm modifying to require [Tainting](https://github.com/GlenKPeterson/Tainting) which requires
+  which I'm modifying to require [Tainted](https://github.com/GlenKPeterson/Tainted) which requires
   TestUtilsBasic.
 - See also [TestUtilsHttp](https://github.com/GlenKPeterson/TestUtilsHttp)
 

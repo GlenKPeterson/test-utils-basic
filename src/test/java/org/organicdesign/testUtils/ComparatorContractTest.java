@@ -1,3 +1,5 @@
+// Copyright 2015 Glen Peterson and PlanBase Inc.
+// SPDX-License-Identifier: Apache-2.0 OR EPL-2.0
 package org.organicdesign.testUtils;
 
 import org.junit.jupiter.api.Test;
@@ -6,9 +8,6 @@ import java.util.Comparator;
 
 import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 
-/**
- Created by Glen K. Peterson on 3/28/17.
- */
 public class ComparatorContractTest {
     @Test
     public void testTestComparator() {

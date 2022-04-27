@@ -1,5 +1,6 @@
+// Copyright 2015 Glen Peterson and PlanBase Inc.
+// SPDX-License-Identifier: Apache-2.0 OR EPL-2.0
 package org.organicdesign.testUtils;
-
 
 import org.junit.jupiter.api.Test;
 
