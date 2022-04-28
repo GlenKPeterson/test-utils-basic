@@ -1,1 +1,1 @@
-rootProject.name = "TestUtilsBasic"
+rootProject.name = "test-utils-basic"

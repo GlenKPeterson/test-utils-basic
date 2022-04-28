@@ -52,7 +52,7 @@ dependencies {
 
 group = "org.organicdesign"
 // Remember to update the version number in both the Maven and Gradle imports in README.md
-version = "0.0.3"
+version = "0.0.1"
 //description = "Utilities for testing common Java contracts: equals(), hashCode(), compare(), compareTo(), and serialization"
 description = "NAME WILL CHANGE TO test-utils-basic"
 

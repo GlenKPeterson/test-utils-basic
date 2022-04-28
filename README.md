@@ -1,4 +1,4 @@
-# TestUtilsBasic
+# test-utils-basic
 Utilities for testing Utilities for testing common Java contracts: equals(), hashCode(), compare(), compareTo(), and serialization.
 I find a bug almost every time I apply these tests to old code.  Usage is defined in the Javadocs.
 
@@ -6,11 +6,9 @@ Bill Venners gave me the idea of contract-based testing:
 https://www.youtube.com/watch?v=bCTZQi2dpl8
 Any bugs are my own.
 
-If you want fake Http servlet requests/responses useful for end-to-end testing java servlets, try [TestUtilsHttp](https://github.com/GlenKPeterson/TestUtilsHttp).
-
 ## Maven Dependency
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.organicdesign/TestUtilsBasic/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.organicdesign/TestUtilsBasic)
-[![javadoc](https://javadoc.io/badge2/org.organicdesign/TestUtilsBasic/javadoc.svg)](https://javadoc.io/doc/org.organicdesign/TestUtilsBasic)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.organicdesign/test-utils-basic/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.organicdesign/test-utils-basic)
+[![javadoc](https://javadoc.io/badge2/org.organicdesign/test-utils-basic/javadoc.svg)](https://javadoc.io/doc/org.organicdesign/test-utils-basic)
 
 Note that this project is just for testing, so add it only to the `test` scope of your project:
 
@@ -18,13 +16,13 @@ Maven:
 ```xml
 <dependency>
 	<groupId>org.organicdesign</groupId>
-	<artifactId>TestUtilsBasic</artifactId>
-	<version>0.0.3</version>
+	<artifactId>test-utils-basic</artifactId>
+	<version>0.0.1</version>
 	<scope>test</scope>
 </dependency>
 ```
 
-Gradle .kts: `testImplementation("org.organicdesign:TestUtilsBasic:0.0.3")`
+Gradle .kts: `testImplementation("org.organicdesign:test-utils-basic:0.0.1")`
 
 ## Usage: Equality
 ```java
@@ -73,16 +71,10 @@ gradle clean assemble publishToMavenLocal
 
 ## Change Log
 
-### 0.0.3 2022-04-28 "Warning: name change to test-utils-basic"
- - Just added a warning to the build that the artifact name will change for future releases.
-   Not sure what other changes are coming.
-
-### 0.0.2 2022-04-26 "Basic"
-- Forked from [TestUtils](https://github.com/GlenKPeterson/TestUtils)
-- Removed all Http stuff because it relied on [Indented](https://github.com/GlenKPeterson/Indented)
-  which I'm modifying to require [Tainted](https://github.com/GlenKPeterson/Tainted) which requires
-  TestUtilsBasic.
-- See also [TestUtilsHttp](https://github.com/GlenKPeterson/TestUtilsHttp)
+### 0.0.1 2022-04-28 "test-utils-basic"
+ - Forked from [TestUtils](https://github.com/GlenKPeterson/TestUtils)
+ - Name change.
+ - Removed all Http stuff because it relied on [Indented](https://github.com/GlenKPeterson/Indented)
 
 ## License
 Copyright 2015 Glen Peterson and PlanBase Inc.
