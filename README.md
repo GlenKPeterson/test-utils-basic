@@ -19,12 +19,12 @@ Maven:
 <dependency>
 	<groupId>org.organicdesign</groupId>
 	<artifactId>TestUtilsBasic</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<scope>test</scope>
 </dependency>
 ```
 
-Gradle .kts: `testImplementation("org.organicdesign:TestUtilsBasic:0.0.2")`
+Gradle .kts: `testImplementation("org.organicdesign:TestUtilsBasic:0.0.3")`
 
 ## Usage: Equality
 ```java
@@ -72,6 +72,10 @@ gradle clean assemble publishToMavenLocal
 ```
 
 ## Change Log
+
+### 0.0.3 2022-04-28 "Warning: name change to test-utils-basic"
+ - Just added a warning to the build that the artifact name will change for future releases.
+   Not sure what other changes are coming.
 
 ### 0.0.2 2022-04-26 "Basic"
 - Forked from [TestUtils](https://github.com/GlenKPeterson/TestUtils)
