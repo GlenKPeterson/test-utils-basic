@@ -37,10 +37,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 // org.gradle.daemon=false
 // Or run with --no-daemon
 plugins {
+    `java-library`
     `maven-publish`
     signing
     id("com.github.ben-manes.versions") version "0.42.0"
-    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+//    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
     id("org.jetbrains.dokka") version "1.6.21"
     kotlin("jvm") version "1.6.21"
 }
@@ -121,11 +122,11 @@ publishing {
     }
 }
 
-nexusPublishing {
-    repositories {
-        sonatype()
-    }
-}
+//nexusPublishing {
+//    repositories {
+//        sonatype()
+//    }
+//}
 
 tasks.javadoc {
     if (JavaVersion.current().isJava9Compatible) {
