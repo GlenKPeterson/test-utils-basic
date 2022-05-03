@@ -36,19 +36,25 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 // At least while dokka crashes the gradle daemon you also want:
 // org.gradle.daemon=false
 // Or run with --no-daemon
+val versionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
+println("Library aliases: ${versionCatalog.libraryAliases}")
+
 plugins {
     `java-library`
     `maven-publish`
     signing
-    id("com.github.ben-manes.versions") version "0.42.0"
-//    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
-    id("org.jetbrains.dokka") version "1.6.21"
-    kotlin("jvm") version "1.6.21"
+    @Suppress("DSL_SCOPE_VIOLATION")
+    alias(libs.plugins.m.versions)
+    @Suppress("DSL_SCOPE_VIOLATION")
+    alias(libs.plugins.dokka)
+    @Suppress("DSL_SCOPE_VIOLATION")
+    alias(libs.plugins.kotlin.jvm)
+////    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
+    implementation(libs.kotlin.stdlib)
+    testImplementation(libs.junit.jupiter)
 }
 
 group = "org.organicdesign"
