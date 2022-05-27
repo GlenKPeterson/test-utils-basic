@@ -59,7 +59,8 @@ dependencies {
 
 group = "org.organicdesign"
 // Remember to update the version number in both the Maven and Gradle imports in README.md
-version = "0.0.2"
+// Version is now set from the master project.
+// version = "0.0.2"
 description = "Utilities for testing common Java contracts: equals(), hashCode(), compare(), compareTo(), and serialization"
 
 java {

@@ -71,6 +71,9 @@ gradle clean assemble publishToMavenLocal
 
 ## Change Log
 
+### 2.0.6 2022-05-27 "assertBetween"
+- Added a range assertion method.
+
 ### 0.0.1 2022-04-28 "test-utils-basic"
  - Forked from [TestUtils](https://github.com/GlenKPeterson/TestUtils)
  - Name change.
