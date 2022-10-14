@@ -53,7 +53,8 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.kotlin.stdlib)
+// Now included by kotlin plugin
+//    implementation(libs.kotlin.stdlib)
     testImplementation(libs.junit.jupiter)
 }
 
