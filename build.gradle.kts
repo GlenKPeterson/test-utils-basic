@@ -11,10 +11,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 // gradle --refresh-dependencies dependencyUpdates
 
 // To publish to maven local:
-// gradle --warning-mode all clean assemble dokkaJar publish publishToMavenLocal
+// gradle --warning-mode all clean assemble dokkaJavadocJar publish publishToMavenLocal
 
 // To publish to Sonatype (do the maven local above first):
-// gradle --warning-mode all clean test assemble dokkaJar publish publishToSonatype closeAndReleaseSonatypeStagingRepository
+// gradle --warning-mode all clean test assemble dokkaJavadocJar publish publishToSonatype closeAndReleaseSonatypeStagingRepository
 
 // If half-deployed, sign in here:
 // https://oss.sonatype.org
@@ -73,10 +73,10 @@ tasks.test {
     useJUnitPlatform()
 }
 
-tasks.register<Jar>("dokkaJar") {
+tasks.register<Jar>("dokkaJavadocJar") {
+    dependsOn(tasks.dokkaJavadoc)
+    from(tasks.dokkaJavadoc.flatMap { it.outputDirectory })
     archiveClassifier.set("javadoc")
-    dependsOn("dokkaJavadoc")
-    from("$buildDir/dokka/javadoc")
 }
 
 publishing {
@@ -86,7 +86,7 @@ publishing {
             afterEvaluate {
                 artifactId = tasks.jar.get().archiveBaseName.get()
             }
-            artifact(tasks["dokkaJar"])
+            artifact(tasks["dokkaJavadocJar"])
             versionMapping {
                 usage("java-api") {
                     fromResolutionOf("runtimeClasspath")
@@ -95,7 +95,7 @@ publishing {
                     fromResolutionResult()
                 }
             }
-//            artifact(tasks["dokkaJar"])
+//            artifact(tasks["dokkaJavadocJar"])
             pom {
                 name.set(rootProject.name)
                 packaging = "jar"
