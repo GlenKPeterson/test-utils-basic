@@ -42,20 +42,19 @@ println("Library aliases: ${versionCatalog.libraryAliases}")
 plugins {
     `java-library`
     `maven-publish`
-    signing
+//    signing
     @Suppress("DSL_SCOPE_VIOLATION")
     alias(libs.plugins.m.versions)
-    @Suppress("DSL_SCOPE_VIOLATION")
-    alias(libs.plugins.dokka)
-    @Suppress("DSL_SCOPE_VIOLATION")
-    alias(libs.plugins.kotlin.jvm)
+
+    kotlin("jvm") version "2.2.10"
+    id("org.jetbrains.dokka-javadoc") version "2.0.0"
 ////    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
 }
 
 dependencies {
-// Now included by kotlin plugin
-//    implementation(libs.kotlin.stdlib)
-    testImplementation(libs.junit.jupiter)
+    testImplementation(platform("org.junit:junit-bom:5.13.4"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 group = "org.organicdesign"
@@ -64,6 +63,12 @@ group = "org.organicdesign"
 // version = "0.0.2"
 description = "Utilities for testing common Java contracts: equals(), hashCode(), compare(), compareTo(), and serialization"
 
+kotlin {
+    compilerOptions {
+        jvmToolchain(17)
+    }
+}
+
 java {
 //    withJavadocJar()
     withSourcesJar()
@@ -71,11 +76,14 @@ java {
 
 tasks.test {
     useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
 }
 
 tasks.register<Jar>("dokkaJavadocJar") {
-    dependsOn(tasks.dokkaJavadoc)
-    from(tasks.dokkaJavadoc.flatMap { it.outputDirectory })
+    dependsOn("dokkaGeneratePublicationJavadoc")
+    from(layout.buildDirectory.dir("dokka/javadoc"))
     archiveClassifier.set("javadoc")
 }
 
@@ -95,7 +103,6 @@ publishing {
                     fromResolutionResult()
                 }
             }
-//            artifact(tasks["dokkaJavadocJar"])
             pom {
                 name.set(rootProject.name)
                 packaging = "jar"
@@ -141,10 +148,10 @@ tasks.javadoc {
     }
 }
 
-signing {
-    useGpgCmd()
-    sign(publishing.publications["mavenJava"])
-}
+//signing {
+//    useGpgCmd()
+//    sign(publishing.publications["mavenJava"])
+//}
 
 tasks.compileJava {
     options.encoding = "UTF-8"
@@ -153,12 +160,4 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven(url="https://jitpack.io")
-}
-val compileKotlin: KotlinCompile by tasks
-compileKotlin.kotlinOptions {
-    jvmTarget = "17"
-}
-val compileTestKotlin: KotlinCompile by tasks
-compileTestKotlin.kotlinOptions {
-    jvmTarget = "17"
 }
