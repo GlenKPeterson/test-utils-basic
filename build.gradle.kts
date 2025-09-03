@@ -63,14 +63,8 @@ group = "org.organicdesign"
 // version = "0.0.2"
 description = "Utilities for testing common Java contracts: equals(), hashCode(), compare(), compareTo(), and serialization"
 
-kotlin {
-    compilerOptions {
-        jvmToolchain(17)
-    }
-}
-
 java {
-//    withJavadocJar()
+    withJavadocJar()
     withSourcesJar()
 }
 
@@ -81,12 +75,6 @@ tasks.test {
     }
 }
 
-tasks.register<Jar>("dokkaJavadocJar") {
-    dependsOn("dokkaGeneratePublicationJavadoc")
-    from(layout.buildDirectory.dir("dokka/javadoc"))
-    archiveClassifier.set("javadoc")
-}
-
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
@@ -94,7 +82,7 @@ publishing {
             afterEvaluate {
                 artifactId = tasks.jar.get().archiveBaseName.get()
             }
-            artifact(tasks["dokkaJavadocJar"])
+//            artifact(tasks["dokkaJavadocJar"])
             versionMapping {
                 usage("java-api") {
                     fromResolutionOf("runtimeClasspath")
