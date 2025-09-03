@@ -43,18 +43,16 @@ plugins {
     `java-library`
     `maven-publish`
 //    signing
-    @Suppress("DSL_SCOPE_VIOLATION")
     alias(libs.plugins.m.versions)
-
-    kotlin("jvm") version "2.2.10"
-    id("org.jetbrains.dokka-javadoc") version "2.0.0"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.dokka.javadoc)
 ////    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.13.4"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation(platform(libs.junit.bom))
+    testImplementation(libs.junit.jupiter)
+    testRuntimeOnly(libs.junit.platform.launcher)
 }
 
 group = "org.organicdesign"

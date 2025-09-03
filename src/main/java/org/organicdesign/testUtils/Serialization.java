@@ -6,6 +6,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 
+/**
+ * Just a utility to serialize and deserialize things to make sure they behave properly through that process.
+ */
 public class Serialization {
     /**
      * Serializes and deserializes the passed object.  Note: Lambdas and anonymous classes are NOT
@@ -14,6 +17,7 @@ public class Serialization {
      * @param obj the item to serialize and deserialize
      * @return whatever's left after serializing and deserializing the original item.  Sometimes
      * things throw (unchecked) exceptions.
+     * @param <T> the Class of object being serialized/deserialized.
      */
     @SuppressWarnings("unchecked")
     public static <T> T serializeDeserialize(
