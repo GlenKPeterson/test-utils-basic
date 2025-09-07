@@ -55,7 +55,7 @@ dependencies {
     testRuntimeOnly(libs.junit.platform.launcher)
 }
 
-group = "org.organicdesign"
+group = "com.planbase"
 // Remember to update the version number in both the Maven and Gradle imports in README.md
 // Version is now set from the master project.
 // version = "0.0.2"
@@ -93,7 +93,7 @@ publishing {
                 name.set(rootProject.name)
                 packaging = "jar"
                 description.set(project.description)
-                url.set("https://github.com/GlenKPeterson/TestUtilsBasic")
+                url.set("https://github.com/PlanBase/TestUtilsBasic")
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
@@ -106,16 +106,16 @@ publishing {
                 }
                 developers {
                     developer {
-                        id.set("GlenKPeterson")
+                        id.set("PlanBase")
                         name.set("Glen K. Peterson")
-                        email.set("glen@organicdesign.org")
                         organization.set("PlanBase Inc.")
+                        url.set("https://github.com/PlanBase/test-utils-basic")
                     }
                 }
                 scm {
-                    connection.set("scm:git:https://github.com/GlenKPeterson/TestUtilsBasic.git")
-                    developerConnection.set("scm:git:https://github.com/GlenKPeterson/TestUtilsBasic.git")
-                    url.set("https://github.com/GlenKPeterson/TestUtilsBasic.git")
+                    connection.set("scm:git:https://github.com/PlanBase/TestUtilsBasic.git")
+                    developerConnection.set("scm:git:https://github.com/PlanBase/TestUtilsBasic.git")
+                    url.set("https://github.com/PlanBase/TestUtilsBasic.git")
                 }
             }
         }

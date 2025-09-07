@@ -65,7 +65,7 @@ The above is a suitable test for the class [com.planbase.pdf.layoutmanager.Paddi
 ## Contributions
 To build locally (in an appropriate folder), you need Java 8+, gradle, and git installed.  Then:
 ```bash
-git clone https://github.com/GlenKPeterson/TestUtilsBasic.git
+git clone https://github.com/PlanBase/TestUtilsBasic.git
 gradle clean assemble publishToMavenLocal
 ```
 
@@ -77,7 +77,7 @@ gradle clean assemble publishToMavenLocal
 ### 0.0.1 2022-04-28 "test-utils-basic"
  - Forked from [TestUtils](https://github.com/GlenKPeterson/TestUtils)
  - Name change.
- - Removed all Http stuff because it relied on [Indented](https://github.com/GlenKPeterson/Indented)
+ - Removed all Http stuff because it relied on [Indented](https://github.com/PlanBase/Indented)
 
 ## License
 Copyright 2015 Glen Peterson and PlanBase Inc.
